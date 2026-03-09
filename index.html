@@ -235,7 +235,17 @@ by john_doe</p>
 <p>1/15/2024</p>
 </div> -->
        </section>
-
+ <dialog id="issue_modal" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <div id="issue-details-container" class="space-y-5"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
     </main>
 
     <!-- <script src="scripts/signin.js"></script> -->

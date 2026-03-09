@@ -11,7 +11,7 @@ const createLabels = (arr) => {
       badge = "badge-warning";
     }
 
-    return `<span class="badge badge-outline ${badge}">${label}</span>`;
+    return `<span class="badge badge-outline bg-yellow-200 text-white ${badge}">${label}</span>`;
   });
 
   return htmlLabels.join("");
@@ -51,7 +51,7 @@ const displayIssues = (issues, status) => {
 
     const issueBtn = document.createElement("div");
     issueBtn.innerHTML = `
-      <div class="card w-full bg-base-100 shadow-md border-t-4 ${borderTopColor}">
+      <div onclick="loadSingleIssue(${issue.id})"  class="card w-full bg-base-100 shadow-md border-t-4 ${borderTopColor}">
   
   <div class="card-body p-5">
     <div class="flex justify-between items-center">
@@ -95,4 +95,65 @@ const displayIssues = (issues, status) => {
     issueContainer.append(issueBtn);
   }
 };
+// issueBtn.innerHTML = `
+// <div onclick="showIssueDetails(${issue.id})"
+// class="card w-full bg-base-100 shadow-md border-t-4 ${borderTopColor} cursor-pointer">
+
+//   <div class="card-body p-5">
+//     <h2 class="card-title">${issue.title}</h2>
+//     <p>${issue.description}</p>
+//   </div>
+
+// </div>
+// `;
+
+const loadSingleIssue = async (id) => {
+  const url = `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`;
+  const res = await fetch(url);
+  const detail = await res.json();
+  displaySingleIssue(detail.data);
+};
+const displaySingleIssue = (data) => {
+  const singleIssueContainer = document.getElementById(
+    "issue-details-container",
+  );
+  singleIssueContainer.innerHTML = `
+  <div class="space-y-4">
+
+    <h2 class="text-2xl font-bold">${data.title}</h2>
+
+    <div class="flex items-center gap-3 text-sm">
+      <span class="badge badge-success">${data.status}</span>
+      <span class="text-gray-500">Opened by ${data.author}</span>
+      <span class="text-gray-400">${onlyDate(data.createdAt)}</span>
+    </div>
+
+    <div class="flex gap-2">
+      ${createLabels(data.labels)}
+    </div>
+
+    <p class="text-gray-600">
+      ${data.description}
+    </p>
+
+    <div class="grid grid-cols-2 gap-4 pt-3">
+
+      <div>
+        <p class="text-sm text-gray-500">Assignee</p>
+        <p class="font-semibold">${data.assignee}</p>
+      </div>
+
+      <div>
+        <p class="text-sm text-gray-500">Priority</p>
+        <span class="bg-gray-300 rounded-md px-6 ">${data.priority}</span>
+      </div>
+
+    </div>
+
+  </div>
+  `;
+
+  document.getElementById("issue_modal").showModal();
+};
+
 loadIssues();
