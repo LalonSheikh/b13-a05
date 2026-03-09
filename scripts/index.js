@@ -34,6 +34,7 @@ const loadIssues = (status) => {
 
 const displayIssues = (issues, status) => {
   const issueContainer = document.getElementById("issue-container");
+  const totalCount = document.getElementById("total-count");
   issueContainer.innerHTML = "";
   if (status === "open") {
     issues = issues.filter((issue) => issue.status === "open");
@@ -42,11 +43,15 @@ const displayIssues = (issues, status) => {
   } else {
     issues;
   }
+  totalCount.innerText = issues.length;
   for (const issue of issues) {
     console.log(issue);
+    const borderTopColor =
+      issue.status === "open" ? "border-green-500" : "border-purple-500";
+
     const issueBtn = document.createElement("div");
     issueBtn.innerHTML = `
-      <div class="card w-80 bg-base-100 shadow-md border-t-4 border-green-500">
+      <div class="card w-full bg-base-100 shadow-md border-t-4 ${borderTopColor}">
   
   <div class="card-body p-5">
     <div class="flex justify-between items-center">
