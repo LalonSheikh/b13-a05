@@ -25,7 +25,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
-    <!-- <header id="header-section" class="min-h-screen max-w-md bg-base-200 mx-auto">
+     <header id="header-section" class="min-h-screen max-w-md bg-base-200 mx-auto">
       <div class="pt-32 text-center">
         <img class="mx-auto" src="assets/github-logo.png" alt="" />
         <h2>GitHub Issues Tracker</h2>
@@ -63,11 +63,10 @@
 
               <button id="signin-btn" class="btn btn-primary rounded-full mt-4">
                 Sign In
-              </button> -->
-              <!-- <a href="home.html" class="opacity-50 text-red-400 bg-bage-200"
-              >Direct</a
-            > -->
-              <!-- <div class="flex items-center my-5">
+              </button>
+              <!-- <a href="home.html" class="opacity-50 text-red-400 bg-bage-200" -->
+              
+               <div class="flex items-center my-5">
                 <div class="border-t-2 flex-grow border-gray-500"></div>
                 <span class="mx-3 font-bold text-gray-500">Or</span>
                 <div class="border-t-2 flex-grow border-gray-500"></div>
@@ -85,25 +84,25 @@
           </div>
         </div>
       </div>
-      <section > -->
-        <!-- You can open the modal using ID.showModal() method -->
+      <section > 
+         <!-- You can open the modal using ID.showModal() method  -->
 <!-- <button class="btn" onclick="login-modal.showModal()">open modal</button> -->
-<!-- <dialog id="login-modal" class="modal">
+ <dialog id="login-modal" class="modal">
   <div class="modal-box w-11/12 max-w-5xl">
     <h3 id="modal-title" class="text-lg font-bold"></h3>
     <p id="modal-description" class="py-4"></p>
     <div class="modal-action">
-      <form method="dialog"> -->
+      <form method="dialog"> 
         <!-- if there is a button, it will close the modal -->
-        <!-- <button class="btn">Close</button>
+        <button class="btn">Close</button>
       </form>
     </div>
   </div>
 </dialog>
       </section>
-    </header> -->
-    <main id="main-section" class="">
-      <!-- navbar section  with website logo and search-->
+    </header>
+    <main id="main-section" class="hidden">
+       <!-- navbar section  with website logo and search -->
       <section >
         <div class="navbar mx-2 mt-5 mb-5 bg-base-100 shadow-sm">
           <div class="navbar-start">
@@ -171,7 +170,7 @@
           </div>
         </div>
       </section>
-      <!-- tap section -->
+      <!-- tap section  -->
        <section  class="  md:flex-row gap-10 items-center py-5 mx-auto w-11/12"
     >
     <div class="tabs tabs-box issues-tab">
@@ -179,18 +178,6 @@
   <button class="tab issue-tab " onclick="removeActive(event); loadIssues('open');">Open</button>
   <button class="tab issue-tab " onclick="removeActive(event); loadIssues('closed');">Closed</button>
 </div>
-<!-- <div class="tabs tabs-box issue-tab">
-  <input type="radio" name="my_tabs_6" class="tab" aria-label="All" onclick="loadIssues()"  checked="checked" />
-  <div onclick="loadIssues()" class="tab-content bg-base-100 border-base-300 p-6">
-    
-  </div>
-
-  <input type="radio" onclick="loadIssues('open')" name="my_tabs_6" class="tab" aria-label="Open"   />
-  <div class="tab-content bg-base-100 border-base-300 p-6"></div>
-
-  <input type="radio" name="my_tabs_6" onclick="loadIssues('closed')" class="tab" aria-label="Closed" />
-  <div class="tab-content bg-base-100 border-base-300 p-6"></div>
-</div> -->
 <div class="flex justify-between items-center mx-2">
     <div class="flex ml-2">
         <img class="w-5 mx-auto " src="assets/Aperture.png" alt="">
@@ -225,29 +212,6 @@ class="bg-gray-100 p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
 </section>
 
 </section>
-       <!-- <div id="spinner" class="hidden text-center my-10">
-  <span class="loading loading-spinner loading-lg"></span>
-</div>
-       <section  id="issue-container" class="bg-gray-100 p-10 w-11/12 mx-auto mt-10  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"> -->
-
-
-
-
-  <!-- <div class="flex w-64 h-64 border-t-[#00A96E] justify-between">
-    <i class="fa-regular text-green-400 fa-circle"></i>
-    <h4>High</h4>
-  </div>
-  <h3>Fix navigation menu on mobile devices</h3>
-  <p>The navigation menu doesn't collapse properly on mobile devices...</p>
-  <div>
-    <p>BUG</p>
-    <p>HELP WANTED</p>
-  </div>
-  <hr>
-  <p>#1
-by john_doe</p>
-<p>1/15/2024</p>
-</div> -->
        </section>
  <dialog id="issue_modal" class="modal modal-bottom sm:modal-middle">
       <div class="modal-box">
@@ -262,7 +226,7 @@ by john_doe</p>
     </dialog>
     </main>
 
-    <!-- <script src="scripts/signin.js"></script> -->
+    <script src="scripts/signin.js"></script>
     <script src="scripts/index.js"></script>
   </body>
 </html>

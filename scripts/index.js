@@ -8,33 +8,6 @@ const manageSpinner = (status) => {
   }
 };
 
-// const manageSpinner = (status) => {
-//   if (status == true) {
-//     document.getElementById("spinner").classList.remove("hidden");
-
-//     document.getElementById("word-container").classList.add("hidden");
-//   } else {
-//     document.getElementById("word-container").classList.remove("hidden");
-//     document.getElementById("spinner").classList.add("hidden");
-//   }
-// };
-
-// const removeActive = (status, event) => {
-//   const issueTabs = document.querySelectorAll(".issue-tab");
-//   console.log(issueTabs);
-//   issueTabs.forEach((tab) =>
-//     event.target.classList.remove("tab-active", "bg-blue-500"),
-//   );
-//   tab.classList.add("tab-active", "text-blue-500");
-//   if (status === "open") {
-//     loadIssues("open");
-//   } else if (status === "closed") {
-//     loadIssues("closed");
-//   } else {
-//     loadIssues();
-//   }
-// };
-
 const removeActive = (event) => {
   const issueTabs = document.querySelectorAll(".issue-tab");
 
@@ -63,14 +36,6 @@ const createLabels = (arr) => {
 
   return htmlLabels.join("");
 };
-//
-// const createLabels = (arr) => {
-//   const htmlLabels = arr.map(
-
-//     (label) => `<span class="btn gap-2 ml-2" >${label}</span>`,
-//   );
-//   return htmlLabels.join("");
-// };
 
 const loadIssues = (status) => {
   manageSpinner(true);
@@ -146,17 +111,6 @@ const displayIssues = (issues, status) => {
     issueContainer.append(issueBtn);
   }
 };
-// issueBtn.innerHTML = `
-// <div onclick="showIssueDetails(${issue.id})"
-// class="card w-full bg-base-100 shadow-md border-t-4 ${borderTopColor} cursor-pointer">
-
-//   <div class="card-body p-5">
-//     <h2 class="card-title">${issue.title}</h2>
-//     <p>${issue.description}</p>
-//   </div>
-
-// </div>
-// `;
 
 const loadSingleIssue = async (id) => {
   const url = `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`;
