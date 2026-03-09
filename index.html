@@ -13,6 +13,7 @@
     <!-- style.css -->
     <link rel="stylesheet" href="style.css" />
     <title>Github | Issue Tracker</title>
+    <link rel="shortcut icon" href="assets/github-logo.png" type="image/x-icon">
     <!-- geist font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,66 +21,256 @@
       href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- fontawesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
-  <body class="min-h-screen max-w-md bg-base-200 mx-auto">
-    <div class="pt-32 text-center">
-      <img class="mx-auto" src="assets/github-logo.png" alt="" />
-      <h2>GitHub Issues Tracker</h2>
-      <p>Sign in to manage your issues</p>
-    </div>
-    <div class="form pt-10">
-      <div
-        class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto rounded-2xl"
-      >
-        <div class="card-body">
-          <fieldset class="fieldset">
-            <label class="label text-lg font-bold">Username</label>
-            <input
-              id="input-number"
-              maxlength="11"
-              minlength="11"
-              type="text"
-              class="input rounded-full bg-base-200"
-              placeholder="Enter Username"
-              required
-            />
-            <p class="text-primary font-semibold text-sm">Default: admin</p>
-            <br />
-            <label class="label text-lg font-bold">Password</label>
-            <input
-              id="input-pin"
-              maxlength=""
-              type="password"
-              class="input rounded-full bg-base-200"
-              placeholder="Enter Password"
-            />
-            <p class="text-primary font-semibold text-sm">Default: admin123</p>
+  <body>
+    <!-- <header id="header-section" class="min-h-screen max-w-md bg-base-200 mx-auto">
+      <div class="pt-32 text-center">
+        <img class="mx-auto" src="assets/github-logo.png" alt="" />
+        <h2>GitHub Issues Tracker</h2>
+        <p>Sign in to manage your issues</p>
+      </div>
+      <div class="form pt-10">
+        <div
+          class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto rounded-2xl"
+        >
+          <div class="card-body">
+            <fieldset class="fieldset">
+              <label class="label text-lg font-bold">Username</label>
+              <input
+                id="user-number"
+                maxlength="11"
+                minlength="11"
+                type="text"
+                class="input rounded-full bg-base-200"
+                placeholder="Enter Username"
+                required
+              />
+              <p class="text-primary font-semibold text-sm">Default: admin</p>
+              <br />
+              <label class="label text-lg font-bold">Password</label>
+              <input
+                id="password-number"
+                maxlength=""
+                type="password"
+                class="input rounded-full bg-base-200"
+                placeholder="Enter Password"
+              />
+              <p class="text-primary font-semibold text-sm">
+                Default: admin123
+              </p>
 
-            <button id="login-btn" class="btn btn-primary rounded-full mt-4">
-              Sign In
-            </button>
-            <!-- <a href="home.html" class="opacity-50 text-red-400 bg-bage-200"
+              <button id="signin-btn" class="btn btn-primary rounded-full mt-4">
+                Sign In
+              </button> -->
+              <!-- <a href="home.html" class="opacity-50 text-red-400 bg-bage-200"
               >Direct</a
             > -->
-            <div class="flex items-center my-5">
-              <div class="border-t-2 flex-grow border-gray-500"></div>
-              <span class="mx-3 font-bold text-gray-500">Or</span>
-              <div class="border-t-2 flex-grow border-gray-500"></div>
-            </div>
-            <p class="text-center text-gray-500 font-semibold">
-              Demo Credentials:
-            </p>
-            <div
-              class="bg-gray-100 py-4 px-12 text-center font-medium rounded-md"
-            >
-              <p><span class="font-bold">Username:</span> admin</p>
-              <p><span class="font-bold">Password:</span> admin123</p>
-            </div>
-          </fieldset>
+              <!-- <div class="flex items-center my-5">
+                <div class="border-t-2 flex-grow border-gray-500"></div>
+                <span class="mx-3 font-bold text-gray-500">Or</span>
+                <div class="border-t-2 flex-grow border-gray-500"></div>
+              </div>
+              <p class="text-center text-gray-500 font-semibold">
+                Demo Credentials:
+              </p>
+              <div
+                class="bg-gray-100 py-4 px-12 text-center font-medium rounded-md"
+              >
+                <p><span class="font-bold">Username:</span> admin</p>
+                <p><span class="font-bold">Password:</span> admin123</p>
+              </div>
+            </fieldset>
+          </div>
         </div>
       </div>
+      <section > -->
+        <!-- You can open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="login-modal.showModal()">open modal</button> -->
+<!-- <dialog id="login-modal" class="modal">
+  <div class="modal-box w-11/12 max-w-5xl">
+    <h3 id="modal-title" class="text-lg font-bold"></h3>
+    <p id="modal-description" class="py-4"></p>
+    <div class="modal-action">
+      <form method="dialog"> -->
+        <!-- if there is a button, it will close the modal -->
+        <!-- <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+      </section>
+    </header> -->
+    <main id="main-section" class="">
+      <!-- navbar section  with website logo and search-->
+      <section >
+        <div class="navbar mx-2 mt-5 mb-5 bg-base-100 shadow-sm">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="-1"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              >
+                <li><a>All</a></li>
+                <li>
+                  <a>Open</a>
+                  
+                </li>
+                <li><a>Closed</a></li>
+              </ul>
+            </div>
+            <img class="w-4 md:w-9" src="assets/github-logo.png" alt="" /> <span class="text-sm">GitHub Issues
+              Tracker</span></a
+            >
+          </div>
+          <div class="navbar-end  items-center lg:flex ">
+            <label class="input ">
+              <svg
+                class="h-[1em] opacity-50"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <g
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-width="2.5"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </g>
+              </svg>
+              <input type="search" required placeholder="Search issues..." />
+            </label>
+            <button 
+              class="btn btn-sm md:btn-md lg:btn-lg xl:btn-xl bg-primary text-white "
+            >
+              +New Issue
+            </button>
+            <button id="signout-btn" onclick="signout()" class="btn btn-error btn-sm ml-1 cursor-pointer opacity-10">
+  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+</button>
+          </div>
+        </div>
+      </section>
+      <!-- tap section -->
+       <section  class="  md:flex-row gap-10 items-center py-5 mx-auto w-11/12"
+    >
+<div class="tabs tabs-box">
+  <input type="radio" name="my_tabs_6" class="tab" aria-label="All" checked="checked" />
+  <div class="tab-content bg-base-100 border-base-300 p-6">All
+    
+  </div>
+
+  <input type="radio" name="my_tabs_6" class="tab" aria-label="Open"   />
+  <div class="tab-content bg-base-100 border-base-300 p-6">Open</div>
+
+  <input type="radio" name="my_tabs_6" class="tab" aria-label="Closed" />
+  <div class="tab-content bg-base-100 border-base-300 p-6">Closed</div>
+</div>
+<div class="flex justify-between items-center mx-2">
+    <div class="flex ml-2">
+        <img class="w-5 mx-auto " src="assets/Aperture.png" alt="">
+        <div>
+            <h4 class="text-lg">50 Issues</h4>
+            <p class="text-sm">Track and manage your project issues</p>
+        </div>
+    </div>
+    <div class="flex">
+            <div class="flex justify-center items-center ">
+
+                <img src="assets/Open-Status.png" alt="">
+                <p class=""> Open</p>
+            </div>
+            <div class="flex justify-center items-center ">
+
+                <img src="assets/Closed- Status .png" alt=""> 
+                <p> Closed</p>
+            </div>
+        
+    </div>
+</div>
+       </section>
+       <section  id="issue-container" class="bg-gray-100 p-10 w-11/12 mx-auto mt-10 grid grid-cols-3 gap-5">
+
+<div>
+  <div class="card w-80 bg-base-100 shadow-md border-t-4 border-green-500">
+  
+  <div class="card-body p-5">
+    <div class="flex justify-between items-center">
+      <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+        <i class="fa-regular text-green-400 fa-circle"></i>
+      </div>
+
+      <span class="badge badge-error badge-outline">HIGH</span>
     </div>
 
-    <script src="script/login.js"></script>
+    
+    <h2 class="card-title text-base mt-2">
+      Fix Navigation Menu On Mobile Devices
+    </h2>
+
+    
+    <p class="text-sm text-gray-500">
+      The navigation menu doesn't collapse properly on mobile devices...
+    </p>
+
+    
+    <div class="flex gap-2 mt-2">
+      <span class="badge badge-outline badge-error">BUG</span>
+      <span class="badge badge-outline badge-warning">HELP WANTED</span>
+    </div>
+
+  </div>
+
+  <div class="divider m-0"></div>
+
+  <!-- Footer -->
+  <div class="p-4 text-sm text-gray-500">
+    <p>#1 by john_doe</p>
+    <p>1/15/2024</p>
+  </div>
+
+</div>
+
+  <!-- <div class="flex w-64 h-64 border-t-[#00A96E] justify-between">
+    <i class="fa-regular text-green-400 fa-circle"></i>
+    <h4>High</h4>
+  </div>
+  <h3>Fix navigation menu on mobile devices</h3>
+  <p>The navigation menu doesn't collapse properly on mobile devices...</p>
+  <div>
+    <p>BUG</p>
+    <p>HELP WANTED</p>
+  </div>
+  <hr>
+  <p>#1
+by john_doe</p>
+<p>1/15/2024</p>
+</div> -->
+       </section>
+
+    </main>
+
+    <!-- <script src="scripts/signin.js"></script> -->
+    <script src="scripts/index.js"></script>
   </body>
 </html>
