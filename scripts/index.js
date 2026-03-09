@@ -1,12 +1,47 @@
-const loadIssues = () => {
+const onlyDate = (date) => {
+  return new Date(date).toLocaleDateString();
+};
+const createLabels = (arr) => {
+  const htmlLabels = arr.map((label) => {
+    let badge = "";
+
+    if (label === "bug") {
+      badge = "badge-error";
+    } else {
+      badge = "badge-warning";
+    }
+
+    return `<span class="badge badge-outline ${badge}">${label}</span>`;
+  });
+
+  return htmlLabels.join("");
+};
+//
+// const createLabels = (arr) => {
+//   const htmlLabels = arr.map(
+
+//     (label) => `<span class="btn gap-2 ml-2" >${label}</span>`,
+//   );
+//   return htmlLabels.join("");
+// };
+
+const loadIssues = (status) => {
   const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
   fetch(url)
     .then((res) => res.json())
-    .then((data) => displayIssues(data.data));
+    .then((data) => displayIssues(data.data, status));
 };
-const displayIssues = (issues) => {
+
+const displayIssues = (issues, status) => {
   const issueContainer = document.getElementById("issue-container");
-  //   issueContainer.innerHTML = "";
+  issueContainer.innerHTML = "";
+  if (status === "open") {
+    issues = issues.filter((issue) => issue.status === "open");
+  } else if (status === "closed") {
+    issues = issues.filter((issue) => issue.status === "closed");
+  } else {
+    issues;
+  }
   for (const issue of issues) {
     console.log(issue);
     const issueBtn = document.createElement("div");
@@ -35,18 +70,18 @@ const displayIssues = (issues) => {
 
     
     <div class="flex gap-2 mt-2">
-      <span class="badge badge-outline badge-error">BUG</span>
-      <span class="badge badge-outline badge-warning">HELP WANTED</span>
+    ${createLabels(issue.labels)}
+      
+      
     </div>
 
   </div>
 
   <div class="divider m-0"></div>
 
-  <!-- Footer -->
   <div class="p-4 text-sm text-gray-500">
     <p>#1 by ${issue.author} </p>
-    <p>1/15/2024</p>
+    <p>${onlyDate(issue.createdAt)}</p>
   </div>
 
 </div>
