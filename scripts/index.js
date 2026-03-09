@@ -1,3 +1,24 @@
+const manageSpinner = (status) => {
+  const spinner = document.getElementById("spinner");
+
+  if (status) {
+    spinner.classList.remove("hidden");
+  } else {
+    spinner.classList.add("hidden");
+  }
+};
+
+// const manageSpinner = (status) => {
+//   if (status == true) {
+//     document.getElementById("spinner").classList.remove("hidden");
+
+//     document.getElementById("word-container").classList.add("hidden");
+//   } else {
+//     document.getElementById("word-container").classList.remove("hidden");
+//     document.getElementById("spinner").classList.add("hidden");
+//   }
+// };
+
 // const removeActive = (status, event) => {
 //   const issueTabs = document.querySelectorAll(".issue-tab");
 //   console.log(issueTabs);
@@ -52,10 +73,14 @@ const createLabels = (arr) => {
 // };
 
 const loadIssues = (status) => {
+  manageSpinner(true);
   const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
   fetch(url)
     .then((res) => res.json())
-    .then((data) => displayIssues(data.data, status));
+    .then((data) => {
+      displayIssues(data.data, status);
+      manageSpinner(false);
+    });
 };
 
 const displayIssues = (issues, status) => {
