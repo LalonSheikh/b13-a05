@@ -174,23 +174,23 @@
       <!-- tap section -->
        <section  class="  md:flex-row gap-10 items-center py-5 mx-auto w-11/12"
     >
-    <!-- <div class="tabs tabs-box">
-  <button class="tab tab-active" onclick="loadIssues()">All</button>
-  <button class="tab" onclick="loadIssues('open')">Open</button>
-  <button class="tab" onclick="loadIssues('closed')">Closed</button>
-</div> -->
-<div class="tabs tabs-box">
+    <div class="tabs tabs-box issues-tab">
+  <button class="tab issue-tab tab-active bg-blue-500 text-white" onclick="removeActive(event); loadIssues();">All</button>
+  <button class="tab issue-tab " onclick="removeActive(event); loadIssues('open');">Open</button>
+  <button class="tab issue-tab " onclick="removeActive(event); loadIssues('closed');">Closed</button>
+</div>
+<!-- <div class="tabs tabs-box issue-tab">
   <input type="radio" name="my_tabs_6" class="tab" aria-label="All" onclick="loadIssues()"  checked="checked" />
-  <div onclick="loadIssues()" class="tab-content bg-base-100 border-base-300 p-6">All
+  <div onclick="loadIssues()" class="tab-content bg-base-100 border-base-300 p-6">
     
   </div>
 
   <input type="radio" onclick="loadIssues('open')" name="my_tabs_6" class="tab" aria-label="Open"   />
-  <div class="tab-content bg-base-100 border-base-300 p-6">Open</div>
+  <div class="tab-content bg-base-100 border-base-300 p-6"></div>
 
   <input type="radio" name="my_tabs_6" onclick="loadIssues('closed')" class="tab" aria-label="Closed" />
-  <div class="tab-content bg-base-100 border-base-300 p-6">Closed</div>
-</div>
+  <div class="tab-content bg-base-100 border-base-300 p-6"></div>
+</div> -->
 <div class="flex justify-between items-center mx-2">
     <div class="flex ml-2">
         <img class="w-5 mx-auto " src="assets/Aperture.png" alt="">

@@ -1,3 +1,29 @@
+// const removeActive = (status, event) => {
+//   const issueTabs = document.querySelectorAll(".issue-tab");
+//   console.log(issueTabs);
+//   issueTabs.forEach((tab) =>
+//     event.target.classList.remove("tab-active", "bg-blue-500"),
+//   );
+//   tab.classList.add("tab-active", "text-blue-500");
+//   if (status === "open") {
+//     loadIssues("open");
+//   } else if (status === "closed") {
+//     loadIssues("closed");
+//   } else {
+//     loadIssues();
+//   }
+// };
+
+const removeActive = (event) => {
+  const issueTabs = document.querySelectorAll(".issue-tab");
+
+  issueTabs.forEach((tab) => {
+    tab.classList.remove("tab-active", "bg-blue-500", "text-white");
+  });
+
+  event.target.classList.add("tab-active", "bg-blue-500", "text-white");
+};
+//
 const onlyDate = (date) => {
   return new Date(date).toLocaleDateString();
 };
